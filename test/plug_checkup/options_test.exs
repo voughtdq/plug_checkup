@@ -135,7 +135,7 @@ defmodule PlugCheckup.OptionsTest do
     test "it raises exception when json_encoder module is not loaded" do
       assert_raise(
         ArgumentError,
-        "invalid :json_encoder option. The module Poison is not loaded and could not be found",
+        "invalid :json_encoder option, could not load module Poison due to reason :nofile",
         fn ->
           new_options(json_encoder: Poison)
         end
