@@ -5,7 +5,7 @@ defmodule PlugCheckup.Mixfile do
     [
       app: :plug_checkup,
       version: "0.6.0",
-      elixir: "~> 1.5",
+      elixir: "~> 1.13",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       description: description(),
@@ -46,13 +46,14 @@ defmodule PlugCheckup.Mixfile do
 
   defp deps do
     [
-      {:plug, "~> 1.4"},
-      {:jason, "~> 1.1", only: [:dev, :test]},
-      {:excoveralls, "~> 0.12", only: [:dev, :test]},
+      {:plug, "~> 1.16"},
+      {:jason, "~> 1.4", only: [:dev, :test]},
+      {:decimal, "~> 2.1", only: [:dev, :test]},
+      {:excoveralls, "~> 0.18", only: [:dev, :test]},
       {:credo, ">= 0.0.0", only: [:dev, :test]},
       {:ex_doc, ">= 0.0.0", only: :dev},
-      {:plug_cowboy, "~> 2.1", only: :dev},
-      {:ex_json_schema, "~> 0.7", only: :test}
+      {:plug_cowboy, "~> 2.7", only: :dev},
+      {:ex_json_schema, "~> 0.10", only: :test}
     ]
   end
 end
